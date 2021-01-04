@@ -8,9 +8,31 @@
 
     <script type="module" src="/build/spacexdesignsystem.esm.js"></script>
     <script nomodule src="/build/spacexdesignsystem.js"></script>
+    <style>
+      body {
+        background-color: #1a1c48;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-    <item-component></item-component>
+    <chart-component name="Cabin Temp" value="12.41" unit="°C" percentage="20%" color="#E72D2D"></chart-component>
+    <item-component name="THERMAL SHIELD" status="awaiting"></item-component>
+    <progress-component percentage="70%"></progress-component>
+
+    <toggle-component value-one="Systems" value-two="Cabin"></toggle-component>
+
+    <button id="btn-toggle" style="margin-top: 100px;">Toggle Component</button>
+
+    <script>
+      let btn = document.getElementById('btn-toggle');
+      let toggleComponent = document.querySelector('toggle-component');
+      btn.addEventListener('click', function () {
+        toggleComponent.toggle();
+      });
+
+      toggleComponent.addEventListener('valueToggle', event => {
+        console.log(event.detail);
+      });
+    </script>
   </body>
 </html>

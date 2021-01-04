@@ -7,10 +7,18 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ChartComponent {
+        "color": string;
+        "name": string;
+        "percentage": string;
+        "size": string;
+        "unit": string;
+        "value": string;
     }
     interface IconComponent {
     }
     interface ItemComponent {
+        "name": string;
+        "status": string;
     }
     interface MyComponent {
         /**
@@ -27,8 +35,12 @@ export namespace Components {
         "middle": string;
     }
     interface ProgressComponent {
+        "percentage": string;
     }
     interface ToggleComponent {
+        "toggle": () => Promise<void>;
+        "valueOne": string;
+        "valueTwo": string;
     }
 }
 declare global {
@@ -79,10 +91,18 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ChartComponent {
+        "color"?: string;
+        "name"?: string;
+        "percentage"?: string;
+        "size"?: string;
+        "unit"?: string;
+        "value"?: string;
     }
     interface IconComponent {
     }
     interface ItemComponent {
+        "name"?: string;
+        "status"?: string;
     }
     interface MyComponent {
         /**
@@ -99,8 +119,12 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface ProgressComponent {
+        "percentage"?: string;
     }
     interface ToggleComponent {
+        "onValueToggle"?: (event: CustomEvent<any>) => void;
+        "valueOne"?: string;
+        "valueTwo"?: string;
     }
     interface IntrinsicElements {
         "chart-component": ChartComponent;

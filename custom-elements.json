@@ -2,29 +2,52 @@
   "version": 1.2,
   "tags": [
     {
-      "name": "my-component",
-      "path": "./src/components/my-component/my-component.tsx",
+      "name": "chart-component",
+      "path": "./src/components/chart-component/chart-component.tsx",
       "description": "",
       "attributes": [
         {
-          "name": "first",
+          "name": "name",
           "type": "string",
-          "description": "The first name",
-          "required": false
+          "description": "Name chart",
+          "required": true
         },
         {
-          "name": "last",
+          "name": "value",
           "type": "string",
-          "description": "The last name",
-          "required": false
+          "description": "Value chart",
+          "required": true
         },
         {
-          "name": "middle",
+          "name": "unit",
           "type": "string",
-          "description": "The middle name",
-          "required": false
+          "description": "Unit",
+          "required": true
+        },
+        {
+          "name": "percentage",
+          "type": "string",
+          "description": "Percentage chart",
+          "required": true
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "description": "Color chart",
+          "required": true
         }
       ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "cssProperties": [],
+      "cssParts": []
+    },
+    {
+      "name": "item-component",
+      "path": "./src/components/item-component/item-component.tsx",
+      "description": "",
+      "attributes": [],
       "events": [],
       "methods": [],
       "slots": [],
